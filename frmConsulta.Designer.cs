@@ -32,6 +32,7 @@
             this.Localidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cultivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Toneladas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmdConsultar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grlConsulta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,10 +43,9 @@
             this.Localidad,
             this.Cultivo,
             this.Toneladas});
-            this.grlConsulta.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grlConsulta.Location = new System.Drawing.Point(0, 0);
+            this.grlConsulta.Location = new System.Drawing.Point(3, 12);
             this.grlConsulta.Name = "grlConsulta";
-            this.grlConsulta.Size = new System.Drawing.Size(1006, 450);
+            this.grlConsulta.Size = new System.Drawing.Size(433, 207);
             this.grlConsulta.TabIndex = 0;
             this.grlConsulta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -54,6 +54,7 @@
             this.Localidad.HeaderText = "Localidad";
             this.Localidad.Name = "Localidad";
             this.Localidad.ReadOnly = true;
+            this.Localidad.Width = 150;
             // 
             // Cultivo
             // 
@@ -67,11 +68,22 @@
             this.Toneladas.Name = "Toneladas";
             this.Toneladas.ReadOnly = true;
             // 
+            // cmdConsultar
+            // 
+            this.cmdConsultar.Location = new System.Drawing.Point(328, 225);
+            this.cmdConsultar.Name = "cmdConsultar";
+            this.cmdConsultar.Size = new System.Drawing.Size(108, 29);
+            this.cmdConsultar.TabIndex = 1;
+            this.cmdConsultar.Text = "Consultar";
+            this.cmdConsultar.UseVisualStyleBackColor = true;
+            this.cmdConsultar.Click += new System.EventHandler(this.cmdConsultar_Click);
+            // 
             // frmConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 450);
+            this.ClientSize = new System.Drawing.Size(444, 277);
+            this.Controls.Add(this.cmdConsultar);
             this.Controls.Add(this.grlConsulta);
             this.Name = "frmConsulta";
             this.Text = "Consulta";
@@ -86,5 +98,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Localidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cultivo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Toneladas;
+        private System.Windows.Forms.Button cmdConsultar;
     }
 }

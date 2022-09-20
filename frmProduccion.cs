@@ -20,53 +20,69 @@ namespace pry1Arla
 
         private void cmdCargar_Click(object sender, EventArgs e)
         {
-            string varLocalidades = lstLocalidad.Text;
-            string varCultivos = lstCultivos.Text;
+           
             string varToneladas = txtToneladas.Text;
-            cmdCargar.Enabled = false;
-
-            StreamWriter toneladas = new StreamWriter("./Toneladas.txt", true);
-            toneladas.WriteLine(lstCultivos.Text + "  " + lstLocalidad.Text + "  " + txtToneladas.Text);
-            txtToneladas.Text = "";
-            MessageBox.Show("Carga realizada");
-            toneladas.Close();
-
-            if (varLocalidades == "" && varCultivos == "" && varToneladas == "")
+            
+            if (varToneladas != "")
             {
-                cmdCargar.Enabled = false; 
+                
+                StreamWriter swToneladas = new StreamWriter("./Toneladas.txt", true);
+                swToneladas.WriteLine(lstLocalidad.Text + "," + lstCultivos.Text + "," + txtToneladas.Text);
+                lstCultivos.Text = "";
+                lstLocalidad.Text = "";
+                txtToneladas.Text = "";
+                MessageBox.Show("Carga realizada");
+                swToneladas.Close();
             }
-            if (varLocalidades != "" && varCultivos != "" && varToneladas != "")
+            else
             {
-                cmdCargar.Enabled = true;
+                
+              MessageBox.Show("Complete con los datos, por favor ");
+                
             }
             
+
 
         }
 
         private void frmProduccion_Load(object sender, EventArgs e)
         {
+            //cargamos a las listas con datos de los archivos 
+
             char separador = Convert.ToChar(",");
-
-            StreamReader localidades = new StreamReader("./Localidades.txt");
+            if (File.Exists("./Localidades.txt"))
+            {
             
-            while (!localidades.EndOfStream)
+                StreamReader srLocalidades = new StreamReader("./Localidades.txt");
+
+                while (!srLocalidades.EndOfStream)
+                {
+                    string[] vecLocalidad = srLocalidades.ReadLine().Split(separador);
+                    lstLocalidad.Items.Add(vecLocalidad[0]);
+                }
+
+                srLocalidades.Close();
+
+            }
+            if (File.Exists("./Cultivos.txt"))
             {
-                string[] matLocalidad = localidades.ReadLine().Split(separador);
-                lstLocalidad.Items.Add(matLocalidad[3]);
+                StreamReader srCultivos = new StreamReader("./Cultivos.txt");
+
+                while (!srCultivos.EndOfStream)
+                {
+                    string[] vecCultivo = srCultivos.ReadLine().Split(separador);
+                    lstCultivos.Items.Add(vecCultivo[0]);
+                }
+                srCultivos.Close();
             }
 
-            localidades.Close();
+        }
 
-            StreamReader cultivos = new StreamReader("./Cultivos.txt");
-
-            while (!cultivos.EndOfStream)
-            {
-                string[] matcultivo = cultivos.ReadLine().Split(separador);
-                lstLocalidad.Items.Add(matcultivo[3]);
-            }
-            cultivos.Close();
-
-
+        private void cmdBorrar_Click(object sender, EventArgs e)
+        {
+            //Borrar archivo 
+            File.Delete("./Toneladas.txt");
+            MessageBox.Show("Archivo Eliminado");
         }
     }
 }

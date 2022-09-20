@@ -28,27 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblIngresaLocalidad = new System.Windows.Forms.Label();
             this.lblLocalidad = new System.Windows.Forms.Label();
             this.cmdCargar = new System.Windows.Forms.Button();
             this.lstLocalidades = new System.Windows.Forms.ComboBox();
+            this.cmdBorrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // lblIngresaLocalidad
-            // 
-            this.lblIngresaLocalidad.AutoSize = true;
-            this.lblIngresaLocalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngresaLocalidad.Location = new System.Drawing.Point(52, 9);
-            this.lblIngresaLocalidad.Name = "lblIngresaLocalidad";
-            this.lblIngresaLocalidad.Size = new System.Drawing.Size(135, 17);
-            this.lblIngresaLocalidad.TabIndex = 0;
-            this.lblIngresaLocalidad.Text = "Ingresa la Localidad";
             // 
             // lblLocalidad
             // 
             this.lblLocalidad.AutoSize = true;
             this.lblLocalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLocalidad.Location = new System.Drawing.Point(5, 48);
+            this.lblLocalidad.Location = new System.Drawing.Point(6, 15);
             this.lblLocalidad.Name = "lblLocalidad";
             this.lblLocalidad.Size = new System.Drawing.Size(69, 17);
             this.lblLocalidad.TabIndex = 3;
@@ -56,9 +46,9 @@
             // 
             // cmdCargar
             // 
-            this.cmdCargar.Location = new System.Drawing.Point(145, 71);
+            this.cmdCargar.Location = new System.Drawing.Point(207, 38);
             this.cmdCargar.Name = "cmdCargar";
-            this.cmdCargar.Size = new System.Drawing.Size(100, 23);
+            this.cmdCargar.Size = new System.Drawing.Size(72, 23);
             this.cmdCargar.TabIndex = 5;
             this.cmdCargar.Text = "Cargar";
             this.cmdCargar.UseVisualStyleBackColor = true;
@@ -93,21 +83,31 @@
             "Santiago del Estero",
             "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
             "Tucumán"});
-            this.lstLocalidades.Location = new System.Drawing.Point(100, 44);
+            this.lstLocalidades.Location = new System.Drawing.Point(101, 11);
             this.lstLocalidades.Name = "lstLocalidades";
-            this.lstLocalidades.Size = new System.Drawing.Size(145, 21);
+            this.lstLocalidades.Size = new System.Drawing.Size(178, 21);
             this.lstLocalidades.TabIndex = 6;
             this.lstLocalidades.SelectedIndexChanged += new System.EventHandler(this.lstLocalidades_SelectedIndexChanged);
+            // 
+            // cmdBorrar
+            // 
+            this.cmdBorrar.Location = new System.Drawing.Point(101, 39);
+            this.cmdBorrar.Name = "cmdBorrar";
+            this.cmdBorrar.Size = new System.Drawing.Size(72, 23);
+            this.cmdBorrar.TabIndex = 7;
+            this.cmdBorrar.Text = "Borrar";
+            this.cmdBorrar.UseVisualStyleBackColor = true;
+            this.cmdBorrar.Click += new System.EventHandler(this.cmdBorrar_Click);
             // 
             // frmLocalidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(259, 103);
+            this.ClientSize = new System.Drawing.Size(291, 74);
+            this.Controls.Add(this.cmdBorrar);
             this.Controls.Add(this.lstLocalidades);
             this.Controls.Add(this.cmdCargar);
             this.Controls.Add(this.lblLocalidad);
-            this.Controls.Add(this.lblIngresaLocalidad);
             this.Name = "frmLocalidad";
             this.Text = "Localidad";
             this.Load += new System.EventHandler(this.frmLocalidad_Load);
@@ -117,10 +117,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblIngresaLocalidad;
         private System.Windows.Forms.Label lblLocalidad;
         private System.Windows.Forms.Button cmdCargar;
         private System.Windows.Forms.ComboBox lstLocalidades;
+        private System.Windows.Forms.Button cmdBorrar;
     }
 }

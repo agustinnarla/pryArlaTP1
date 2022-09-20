@@ -16,25 +16,33 @@ namespace pry1Arla
         public frmConsulta()
         {
             InitializeComponent();
-            StreamReader consulta = new StreamReader("./toneladas.txt");
-            char separador = Convert.ToChar(",");
-
-            while (!consulta.EndOfStream)
-            {
-                string[] matProductos = consulta.ReadLine().Split(separador);
-                string localidad = matProductos[0];
-                string cultivos = matProductos[1];  
-                string toneladas = matProductos[2];
-
-            }
-            consulta.Close();
-            
-
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void cmdConsultar_Click(object sender, EventArgs e)
+        {
+            if (File.Exists("./Toneladas.txt"))
+            {
+                char separador = Convert.ToChar(",");
+                StreamReader srConsultaTotal = new StreamReader("./Toneladas.txt");
+                while (!srConsultaTotal.EndOfStream)
+                {
+                    string[] vecConsultaCliente = srConsultaTotal.ReadLine().Split(separador);
+                     grlConsulta.Rows.Add(vecConsultaCliente);
+                    cmdConsultar.Enabled = false;
+
+                }
+                srConsultaTotal.Close();
+            }
+            else
+            {
+                MessageBox.Show("Porfavor, primero registre los datos.");
+            }
         }
     }
 }

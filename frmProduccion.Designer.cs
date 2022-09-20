@@ -36,6 +36,7 @@
             this.lstCultivos = new System.Windows.Forms.ComboBox();
             this.txtToneladas = new System.Windows.Forms.TextBox();
             this.cmdCargar = new System.Windows.Forms.Button();
+            this.cmdBorrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblCultivos
@@ -105,19 +106,30 @@
             // 
             // cmdCargar
             // 
-            this.cmdCargar.Location = new System.Drawing.Point(147, 137);
+            this.cmdCargar.Location = new System.Drawing.Point(190, 137);
             this.cmdCargar.Name = "cmdCargar";
-            this.cmdCargar.Size = new System.Drawing.Size(100, 23);
+            this.cmdCargar.Size = new System.Drawing.Size(60, 23);
             this.cmdCargar.TabIndex = 14;
             this.cmdCargar.Text = "Cargar";
             this.cmdCargar.UseVisualStyleBackColor = true;
             this.cmdCargar.Click += new System.EventHandler(this.cmdCargar_Click);
+            // 
+            // cmdBorrar
+            // 
+            this.cmdBorrar.Location = new System.Drawing.Point(104, 137);
+            this.cmdBorrar.Name = "cmdBorrar";
+            this.cmdBorrar.Size = new System.Drawing.Size(60, 23);
+            this.cmdBorrar.TabIndex = 15;
+            this.cmdBorrar.Text = "Borrar";
+            this.cmdBorrar.UseVisualStyleBackColor = true;
+            this.cmdBorrar.Click += new System.EventHandler(this.cmdBorrar_Click);
             // 
             // frmProduccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(259, 166);
+            this.Controls.Add(this.cmdBorrar);
             this.Controls.Add(this.cmdCargar);
             this.Controls.Add(this.txtToneladas);
             this.Controls.Add(this.lstCultivos);
@@ -144,5 +156,6 @@
         private System.Windows.Forms.ComboBox lstCultivos;
         private System.Windows.Forms.TextBox txtToneladas;
         private System.Windows.Forms.Button cmdCargar;
+        private System.Windows.Forms.Button cmdBorrar;
     }
 }

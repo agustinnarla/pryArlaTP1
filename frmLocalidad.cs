@@ -32,14 +32,19 @@ namespace pry1Arla
             string varLocalidades = lstLocalidades.Text;
             int varIdentificador = 1;
 
+            //Si no esta vacio que entre 
             if (varLocalidades != "")
             {
+                //Comprobar si el archivo ya esta creado
                 if (File.Exists("./Localidades.txt"))
                 {
                     char separador = Convert.ToChar(",");
-                    StreamReader srLocalidades = new StreamReader("./Localidaes.txt");
+                    //Lectura
+                    StreamReader srLocalidades = new StreamReader("./Localidades.txt");
+                    
                     while (!srLocalidades.EndOfStream)
                     {
+                        //Creacion de identificador automatico
                         string[] vecLocalidades = srLocalidades.ReadLine().Split(separador);
                         int vecId = Convert.ToInt32(vecLocalidades[1]);
                         varIdentificador = vecId + 1;
@@ -47,7 +52,8 @@ namespace pry1Arla
                     }
                     srLocalidades.Close();
                 }
-                StreamWriter swLocalidades = new StreamWriter("./Localidades.txt", true);
+                //Evitar que se sobrescriban los archivos 
+                StreamWriter swLocalidades = File.AppendText("./Localidades.txt");
                 swLocalidades.WriteLine(varLocalidades + "," + varIdentificador);
                 MessageBox.Show("Carga Realizada");
                 lstLocalidades.Text = "";
@@ -74,6 +80,13 @@ namespace pry1Arla
         private void txtIdentificacion_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void cmdBorrar_Click(object sender, EventArgs e)
+        {
+            //Borrar archivo 
+            File.Delete("./Localidades.txt");
+            MessageBox.Show("Archivo Eliminado");
         }
     }
 }
