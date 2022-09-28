@@ -56,7 +56,7 @@ namespace pry1Arla
                 StreamWriter swLocalidades = File.AppendText("./Localidades.txt");
                 swLocalidades.WriteLine(varLocalidades + "," + varIdentificador);
                 MessageBox.Show("Carga Realizada");
-                lstLocalidades.Text = "";
+                lstLocalidades.SelectedIndex = -1;
                 lstLocalidades.Focus();
                 swLocalidades.Close();
             }

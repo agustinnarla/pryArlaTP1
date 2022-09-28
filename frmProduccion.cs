@@ -28,8 +28,8 @@ namespace pry1Arla
                 
                 StreamWriter swToneladas = new StreamWriter("./Toneladas.txt", true);
                 swToneladas.WriteLine(lstLocalidad.Text + "," + lstCultivos.Text + "," + txtToneladas.Text);
-                lstCultivos.Text = "";
-                lstLocalidad.Text = "";
+                lstCultivos.SelectedIndex = -1;
+                lstLocalidad.SelectedIndex =-1;
                 txtToneladas.Text = "";
                 MessageBox.Show("Carga realizada");
                 swToneladas.Close();
