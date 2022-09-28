@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCultivos));
             this.lblCultivos = new System.Windows.Forms.Label();
             this.txtCultivos = new System.Windows.Forms.TextBox();
             this.cmdCargar = new System.Windows.Forms.Button();
@@ -80,7 +81,9 @@
             this.Controls.Add(this.cmdCargar);
             this.Controls.Add(this.lblCultivos);
             this.Controls.Add(this.txtCultivos);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCultivos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cultivos";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAgricultura));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.localidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -100,7 +101,7 @@
             // consultaLocalidadesToolStripMenuItem
             // 
             this.consultaLocalidadesToolStripMenuItem.Name = "consultaLocalidadesToolStripMenuItem";
-            this.consultaLocalidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaLocalidadesToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.consultaLocalidadesToolStripMenuItem.Text = "Consulta ";
             this.consultaLocalidadesToolStripMenuItem.Click += new System.EventHandler(this.consultaLocalidadesToolStripMenuItem_Click);
             // 
@@ -110,8 +111,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(245, 138);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmAgricultura";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agrigultura - Sp1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

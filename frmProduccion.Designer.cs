@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmProduccion));
             this.lblCultivos = new System.Windows.Forms.Label();
             this.lblLocalidad = new System.Windows.Forms.Label();
             this.lblIngresoToneladas = new System.Windows.Forms.Label();
@@ -103,6 +104,7 @@
             this.txtToneladas.Name = "txtToneladas";
             this.txtToneladas.Size = new System.Drawing.Size(143, 20);
             this.txtToneladas.TabIndex = 13;
+            this.txtToneladas.TextChanged += new System.EventHandler(this.txtToneladas_TextChanged);
             // 
             // cmdCargar
             // 
@@ -138,7 +140,9 @@
             this.Controls.Add(this.lblCultivos);
             this.Controls.Add(this.lblLocalidad);
             this.Controls.Add(this.lblIngresoToneladas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmProduccion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produccion";
             this.Load += new System.EventHandler(this.frmProduccion_Load);
             this.ResumeLayout(false);

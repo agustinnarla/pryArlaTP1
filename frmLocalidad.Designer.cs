@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLocalidad));
             this.lblLocalidad = new System.Windows.Forms.Label();
             this.cmdCargar = new System.Windows.Forms.Button();
             this.lstLocalidades = new System.Windows.Forms.ComboBox();
@@ -46,7 +47,7 @@
             // 
             // cmdCargar
             // 
-            this.cmdCargar.Location = new System.Drawing.Point(207, 38);
+            this.cmdCargar.Location = new System.Drawing.Point(207, 49);
             this.cmdCargar.Name = "cmdCargar";
             this.cmdCargar.Size = new System.Drawing.Size(72, 23);
             this.cmdCargar.TabIndex = 5;
@@ -83,7 +84,7 @@
             "Santiago del Estero",
             "Tierra del Fuego, Antártida e Islas del Atlántico Sur",
             "Tucumán"});
-            this.lstLocalidades.Location = new System.Drawing.Point(101, 11);
+            this.lstLocalidades.Location = new System.Drawing.Point(101, 15);
             this.lstLocalidades.Name = "lstLocalidades";
             this.lstLocalidades.Size = new System.Drawing.Size(178, 21);
             this.lstLocalidades.TabIndex = 6;
@@ -91,7 +92,7 @@
             // 
             // cmdBorrar
             // 
-            this.cmdBorrar.Location = new System.Drawing.Point(101, 39);
+            this.cmdBorrar.Location = new System.Drawing.Point(101, 50);
             this.cmdBorrar.Name = "cmdBorrar";
             this.cmdBorrar.Size = new System.Drawing.Size(72, 23);
             this.cmdBorrar.TabIndex = 7;
@@ -103,12 +104,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 74);
+            this.ClientSize = new System.Drawing.Size(293, 80);
             this.Controls.Add(this.cmdBorrar);
             this.Controls.Add(this.lstLocalidades);
             this.Controls.Add(this.cmdCargar);
             this.Controls.Add(this.lblLocalidad);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmLocalidad";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Localidad";
             this.Load += new System.EventHandler(this.frmLocalidad_Load);
             this.ResumeLayout(false);
